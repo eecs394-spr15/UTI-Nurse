@@ -14,11 +14,6 @@ module.exports =
       id: "settings"
       location: "example#settings"
     }
-    {
-      title: "Internet"
-      id: "internet"
-      location: "http://google.com" # URLs are supported!
-    }
   ]
 
   # rootView:
