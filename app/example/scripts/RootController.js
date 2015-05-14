@@ -18,22 +18,28 @@ angular
         });
   	};
 
-
+    $scope.profileFunction = function(patient){
+      return patient.get("profile");
+    };
      $scope.checkUserSubmitted= function(){
           var query = new Parse.Query(Parse.User);
           query.equalTo("submitted", true);
           query.find({
             success: function(results) {
-              alert("Successfully retrieved " + results.length + " users.");
+              $scope.patients= results;
+              $scope.$apply();
+              //alert("Successfully retrieved " + results.length + " users.");
               // Do something with the returned Parse.Object values
-              for (var i = 0; i < results.length; i++) { 
-                var object = results[i];
-                alert(object.id + ' - ' + object.get('username'));
-              }
+              //for (var i = 0; i < results.length; i++) { 
+              //  var object = results[i];
+              //  alert(object.id + ' - ' + object.get('username'));
+              //}
             },
             error: function(error) {
               alert("Error: " + error.code + " " + error.message);
             }
           });
       };
+
+      //setTimeout($scope.checkUserSubmitted(), 5000);
   });
