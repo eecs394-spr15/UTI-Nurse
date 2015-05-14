@@ -1,4 +1,4 @@
-<div class="padding">
+<div class="padding" ng-controller="RootController">
 
   <super-navbar>
     <super-navbar-title>
@@ -6,8 +6,7 @@
     </super-navbar-title>
   </super-navbar>
 
-  <super-navigate view-id="view-cases">
-    <button class="button button-block button-positive icon-left super-ios7-medkit-outline">View pending cases</button>
-  </super-navigate>
+    <button ng-click="getNewUserData()" class="button button-block button-positive icon-left super-ios7-medkit-outline">View pending cases</button>
+
 
 </div>
