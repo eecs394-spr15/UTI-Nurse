@@ -1,7 +1,6 @@
 angular
   .module('example')
-  .controller('RootController', function($scope, supersonic) {
-    
+  .controller('RootController', function($scope,$interval,supersonic) {
     $scope.getNewUserData =function(){
     	//supersonic.ui.dialog.alert("success");
   		var query = new Parse.Query(Parse.User);
@@ -36,10 +35,10 @@ angular
               //}
             },
             error: function(error) {
-              alert("Error: " + error.code + " " + error.message);
+              //alert("Error: " + error.code + " " + error.message);
             }
           });
       };
-
-      //setTimeout($scope.checkUserSubmitted(), 5000);
+      $scope.checkUserSubmitted();
+      setInterval($scope.checkUserSubmitted, 3000);
   });

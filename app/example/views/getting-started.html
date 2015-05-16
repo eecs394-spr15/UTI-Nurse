@@ -6,12 +6,12 @@
     </super-navbar-title>
   </super-navbar>
 
-    <button ng-click="checkUserSubmitted()" class="button button-block button-positive icon-left super-ios7-medkit-outline">View pending cases</button>
+    <!-- <button ng-click="checkUserSubmitted()" class="button button-block button-positive icon-left super-ios7-medkit-outline">View pending cases</button> -->
 
    	<h4>Patients Submitted</h4>
 	
 	    <div class="list list-inset">
-				<super-navigate class="item item-button-right" ng-repeat="patient in patients" location = "example#UserProfile" >
+				<super-navigate class="item item-button-right" ng-repeat="patient in patients" location = "example#UserProfile" data-params-id="{{ patient.get('profile') }}">
 		    		{{patient.get("username")}}
 				    <button class="button button-positive">
 				      <i class="super-checkmark-round"></i>

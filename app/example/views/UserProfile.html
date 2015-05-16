@@ -10,32 +10,24 @@
 
 <label class="item item-input">
     <span class="input-label">First Name</span>
-    <input type="text" ng-model="Profile.firstName">
+    <p>{{Profile.firstName}}</p>
   </label>
 
   <label class="item item-input">
     <span class="input-label">Last Name</span>
-    <input type="text" ng-model="Profile.lastName">
+    <p>{{Profile.lastName}}</p>
   </label>
 
 <label class="item item-input">
     <span class="input-label">Gender</span>
-    <input type="text" ng-model="Profile.gender">
+    <p>{{Profile.gender}}</p>
   </label>
 
   <label class="item item-input item-select">
     <div class="input-label">
       Race
     </div>
-    <select ng-model="Profile.race">
-      <option selected>White</option>
-      <option>American Indian or Alaska Native</option>
-      <option>Asian</option>
-      <option>Black or African American</option>
-      <option>Native Hawaiian or Other Pacific Islanders</option>
-      <option>Hispanic or Latino</option>
-      <option>Other</option>
-    </select>
+    <p>{{Profile.race}}</p>
   </label>
 
 <div class="QuestionMargin">
@@ -44,77 +36,24 @@
 
   <label class="item item-input">
     <span class="input-label">Street Address</span>
-    <input type="text" ng-model="Profile.streetAddress">
+    <p> {{Profile.streetAddress}}</p>
   </label>
 
   <label class="item item-input">
     <span class="input-label">City/Town</span>
-    <input type="text" ng-model="Profile.city">
+    <p>{{Profile.city}}</p>
   </label>
 
   <label class="item item-input item-select">
     <div class="input-label">
       State
     </div>
-      <select ng-model="Profile.state">
-    <option select>Choose a state</option>  	
-	<option>Alabama</option>
-	<option>Alaska</option>
-	<option>Arizona</option>
-	<option>Arkansas</option>
-	<option>California</option>
-	<option>Colorado</option>
-	<option>Connecticut</option>
-	<option>Delaware</option>
-	<option>District Of Columbia</option>
-	<option>Florida</option>
-	<option>Georgia</option>
-	<option>Hawaii</option>
-	<option>Idaho</option>
-	<option>Illinois</option>
-	<option>Indiana</option>
-	<option>Iowa</option>
-	<option>Kansas</option>
-	<option>Kentucky</option>
-	<option>Louisiana</option>
-	<option>Maine</option>
-	<option>Maryland</option>
-	<option>Massachusetts</option>
-	<option>Michigan</option>
-	<option>Minnesota</option>
-	<option>Mississippi</option>
-	<option>Missouri</option>
-	<option>Montana</option>
-	<option>Nebraska</option>
-	<option>Nevada</option>
-	<option>New Hampshire</option>
-	<option>New Jersey</option>
-	<option>New Mexico</option>
-	<option>New York</option>
-	<option>North Carolina</option>
-	<option>North Dakota</option>
-	<option>Ohio</option>
-	<option>Oklahoma</option>
-	<option>Oregon</option>
-	<option>Pennsylvania</option>
-	<option>Rhode Island</option>
-	<option>South Carolina</option>
-	<option>South Dakota</option>
-	<option>Tennessee</option>
-	<option>Texas</option>
-	<option>Utah</option>
-	<option>Vermont</option>
-	<option>Virginia</option>
-	<option>Washington</option>
-	<option>West Virginia</option>
-	<option>Wisconsin</option>
-	<option>Wyoming</option>
-    </select>
+      <p>{{Profile.state}}</p>
   </label>
 
 <label class="item item-input">
     <span class="input-label">Zip Code</span>
-    <input type="text" ng-model="Profile.zipCode">
+    <p>{{Profile.zipCode}}</p>
   </label>
     <h4>Allergy Information</h4>
 
@@ -122,30 +61,30 @@
 <ul class="list">
   <li class="item item-checkbox">
      <label class="checkbox">
-       <input type="checkbox" ng-model="Profile.sulfa">
+       <input type="checkbox" ng-model="Profile.sulfa" onclick="return false">
      </label>
      Sulfa
   </li>
   <li class="item item-checkbox">
      <label class="checkbox">
-       <input type="checkbox" ng-model="Profile.penicillin">
+       <input type="checkbox" ng-model="Profile.penicillin" onclick="return false">
      </label>
      Penicillin
   </li>
   <li class="item item-checkbox">
      <label class="checkbox">
-       <input type="checkbox" ng-model="Profile.nitrofurantoin">
+       <input type="checkbox" ng-model="Profile.nitrofurantoin" onclick="return false">
      </label>
      Nitrofurantoin
   </li>
   <li class="item item-checkbox">
      <label class="checkbox">
-       <input type="checkbox" ng-model="Profile.fluoroquinolone">
+       <input type="checkbox" ng-model="Profile.fluoroquinolone" onclick="return false">
      </label>
      Fluoroquinolone
   </li>
   <li class="item item-input">
-    <input type="text" placeholder="Type in any other allergies" ng-model="Profile.otherAllergy">
+    <input type="text" placeholder="Type in any other allergies" ng-model="Profile.otherAllergy" onclick="return false">
   </label>
   </li>
 </ul>

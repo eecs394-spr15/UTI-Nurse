@@ -1,10 +1,12 @@
 angular
   .module('example')
   .controller('UserProfileController', function($scope, supersonic) {
-   	
-   //	supersonic.ui.views.current.params.onValue( function (patientPara) {
-   //   $scope.test = patientPara;
-   //   supersonic.ui.dialog.alert($scope.test);
-   // });
+   	$scope.userProfile = undefined;
 
+    supersonic.ui.views.current.params.onValue( function (values) {
+      //alert(values.id);
+      $scope.userProfile = JSON.parse(values.id);
+      $scope.Profile = $scope.userProfile;
+      $scope.$apply();
+    });
   });
