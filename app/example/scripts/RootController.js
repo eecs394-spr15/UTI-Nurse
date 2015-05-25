@@ -20,11 +20,7 @@ angular
     $scope.profileFunction = function(patient){
       return patient.get("profile");
     };
-    $scope.approve = function(id){
-      var query = new Parse.Query(Parse.User);
-          query.equalTo("createdBy", id);
-
-    };
+    
      $scope.checkUserSubmitted= function(){
           // var query = new Parse.Query(Parse.User);
           // query.equalTo("submitted", true);
@@ -44,7 +40,7 @@ angular
           //   }
           // });
           var query = new Parse.Query("Case");
-          query.equalTo("createdBy", Parse.User.current());
+          //query.notEqualTo("createdBy", 1);
           query.find({
             success: function(results) {
               $scope.cases = results;
