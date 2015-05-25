@@ -1,0 +1,103 @@
+<super-navbar>
+  <super-navbar-title>
+    Submit UTI Report
+  </super-navbar-title>
+</super-navbar>
+
+<div class="padding" ng-controller ="ReportController">
+
+<div class="QuestionMargin">
+  <h4>Category 1</h4>
+</div>
+
+<div>
+
+    <div>
+      <div>
+        Are you pregnant?
+      </div>
+      <p>
+        {{Category.pregnant}}
+      </p>
+    </div>
+    <br>
+    <div>
+      <div>
+        Do you see blood in your Urine
+      </div>
+      <p>
+        {{Category.blood}}
+      </p>
+    </div>
+    <br>
+    <div>
+      <div>
+        Do you have a fever (>100.4F or >38C)?
+      </div>
+      <p>
+        {{Category.fever}}
+      </p>
+    </div>
+    <br>
+    <div>
+      <div>
+        Do you have vaginal itching, burning, or discharge?
+      </div>
+      <p>
+        {{Category.vaginal}}
+      </p>
+    </div>
+    <br>
+    <div>
+      <div>
+        Do you have new back or flank (side of back) pain?
+      </div>
+      <p>
+        {{Category.flank}}
+      </p>
+    </div>
+</div>
+
+<div class="QuestionMargin" style="margin-top:30px;">
+<h4>Category 2</h4>
+</div>
+<h6>Check all that apply</h6>
+
+<div class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Category.dysuria" disabled>
+     </label>
+     Burning or pain with urination
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Category.frequency" disabled>
+     </label>
+     Increased frequency of urination
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Category.urgency" disabled>
+     </label>
+     Increaased urgency of urination
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Category.suprapubi" disabled>
+     </label>
+     Discomfort or pressure<br>in the lower abdomen
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Category.foul" disabled>
+     </label>
+     Foul smelling or cloudy urine
+  </li>
+</div>
+
+ <super-navigate location="example#RootView">
+    <button ng-click="reportUTI()" class="button button-block button-calm">Submit</button>
+</super-navigate>
+
+</div>
