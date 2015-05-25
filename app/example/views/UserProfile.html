@@ -88,7 +88,153 @@
   </label>
   </li>
 </ul>
+</div>
+
+</label>
+    <h4>Past Medical History</h4>
+
+<div class="list">
+<ul class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Profile.past1" onclick="return false">
+     </label>
+     Cancer
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Profile.past2" onclick="return false">
+     </label>
+     HIV/AIDS
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Profile.past3" onclick="return false">
+     </label>
+     Diarrhea
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="Profile.past4" onclick="return false">
+     </label>
+     Swine Flu
+  </li>
+  <li class="item item-input">
+    <input type="text" placeholder="Past diseases" ng-model="Profile.pastOther" onclick="return false">
+    <textarea name="Text1" cols="40" rows="3">
+    </textarea>
+  </label>
+  </li>
+</ul>
+</div>
+
+</label>
+    <h4>Past Surgical History</h4>
+  
+<div class="list">
+<ul class="list">
+    </li>
+    <li class="item">
+      <!-- <input type="text" placeholder="Please provide surgical history" ng-model="Profile.surgeryHistory"> -->
+      <p>{{Profile.surgeryHistory}}</p>
+      <!-- <textarea name="Text1" cols="40" rows="5"> -->
+      <!-- </textarea> -->
+    </li>
+</ul>
+</div>
+
+
+<div class="QuestionMargin">
+<h4 >Insurance Information</h4>
+
+<div class="list">
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Insurance Group ID</span>
+    <p>{{Profile.InsuranceGroupId}}</p>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Person Responsible for Policy</span>
+    <p>{{Profile.PolicyPerson}}</p>
+  </label>
+
+  <label class="item item-input  item-stacked-label">
+    <span class="input-label profile-span">Insurance Company</span>
+    <p>{{Profile.InsuranceCompany}}</p>
+  </label>
+
+</div>
+    </div>
+
+<div class="QuestionMargin">
+<h4>Physician Information</h4>
+
+<div class="list">
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Physician Name</span>
+    <p>{{Profile.PhysicianName}}</p>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">City</span>
+    <p>{{Profile.PhysicianCity}}</p>
+  </label>
+</div>
+    </div>
+
+<div class="QuestionMargin">
+<h4>Pharmacy Information</h4>
+
+<div class="list">
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Pharmacy Name</span>
+    <p>{{Profile.PharmacyName}}</p>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">City</span>
+    <p>{{Profile.PharmacyCity}}</p>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Zipcode</span>
+    <p>{{Profile.PharmacyZipcode}}</p>
+  </label>
+</div>
+</div>
+
+<div class="QuestionMargin">
+<h4 >Payment Information</h4>
+
+<div class="list">
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Credit Card Number</span>
+    <p>{{Profile.CreditCardNumber}}</p>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label profile-span">Expiration Date</span>
+    <p>{{Profile.ExpirationDate}}</p>
+  </label>
+
+  <label class="item item-input  item-stacked-label">
+    <span class="input-label profile-span">Name on the Card</span>
+    <p>{{Profile.CardName}}</p>
+  </label>
+
+  <label class="item item-input  item-stacked-label">
+    <span class="input-label profile-span">CVV</span>
+    <p>{{Profile.CVV}}</p>
+  </label>
+</div>
+    </div>
+
+</ul>
 <button ng-click="authorize()" class="button button-block button-positive">Authorize</button>
 <button ng-click="suggestClinicVisit()" class="button button-block button-positive">Suggest Clinic Visit</button>
 </div>
 </div>
+
