@@ -26,13 +26,7 @@ angular
           query.find({
             success: function(results) {
               $scope.patients= results;
-              $scope.$apply();
-              //alert("Successfully retrieved " + results.length + " users.");
-              // Do something with the returned Parse.Object values
-              //for (var i = 0; i < results.length; i++) { 
-              //  var object = results[i];
-              //  alert(object.id + ' - ' + object.get('username'));
-              //}
+              $scope.$apply();gh
             },
             error: function(error) {
               //alert("Error: " + error.code + " " + error.message);
