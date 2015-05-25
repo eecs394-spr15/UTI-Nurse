@@ -20,7 +20,7 @@
 			    </super-navigate> -->
 			    <super-navigate class="item item-button-right" ng-repeat="case in cases" location = "example#Case" data-params-id="{{ case.objectId }}">
 		    		{{ case.now }}
-				    <button class="button button-positive" ng-click="approve(case.createdBy)">
+				    <button class="button button-positive">
 				    	{{ case.status }}
 				      <!-- <i class="super-close-round"></i> -->
 				      <!-- <i class="super-close"> -->

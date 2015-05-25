@@ -28,10 +28,37 @@ angular
           $scope.refresh();
     };
 
+    $scope.approve = function(id){
+      // var query = new Parse.Query("Case");
+      //     query.equalTo("createdBy", id);
+      // query.first({
+      //     success: function (Case) {
+      //         Case.save(null, {
+      //             success: function (case) {
+      //               case.set("status", "Approved");
+      //               case.save();
+      //             }
+      //           });
+      //         }
+      //       });
+      var Point = Parse.Object.extend("Case");
+        var point = new Point();
+        point.id = id;
 
+        // Set a new value on quantity
+        point.set("status", "Approved");
 
-
-
+        // Save
+        point.save(null, {
+          success: function(point) {
+            // Saved successfully.
+          },
+          error: function(point, error) {
+            // The save failed.
+            // error is a Parse.Error with an error code and description.
+          }
+        });
+    };
 
     $scope.checkStatus =function(){
         $scope.refresh();
@@ -53,6 +80,7 @@ angular
       query.find({
             success: function(results) {
               $scope.Category=JSON.parse(results[0].get("questionnaire"));
+              $scope.Category.objectId = results[0].id;
               $scope.$apply();
             },
             error: function(error) {
