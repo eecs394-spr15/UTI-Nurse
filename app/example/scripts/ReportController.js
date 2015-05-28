@@ -6,6 +6,8 @@ angular
     $scope.currentUser = Parse.User.current();
 
 
+
+
     $scope.$apply();
 
     $scope.reportUTI=function(){
@@ -63,7 +65,7 @@ angular
     $scope.checkStatus =function(){
         $scope.refresh();
         if($scope.currentUser.get("approved")) supersonic.ui.dialog.alert($scope.currentUser.get("approved"));
-        else supersonic.ui.dialog.alert("You have not submitted a UIT report yet.");
+        else supersonic.ui.dialog.alert("You have not submitted a UTI report yet.");
     };
 
     $scope.refresh = function(){
@@ -74,6 +76,7 @@ angular
 
   supersonic.ui.views.current.params.onValue( function (values) {
       //alert(values.id);
+      
       var query = new Parse.Query("Case");
           query.equalTo("objectId", values.id);
           //alert(values.id);
@@ -81,6 +84,8 @@ angular
             success: function(results) {
               $scope.Category=JSON.parse(results[0].get("questionnaire"));
               $scope.Category.objectId = results[0].id;
+              $scope.Category.clinic = (($scope.Category.pregnant == "Yes") || ($scope.Category.blood == "Yes") ||
+                ($scope.Category.fever == "Yes") || ($scope.Category.vaginal == "Yes") || ($scope.Category.flank == "Yes"));
               $scope.$apply();
             },
             error: function(error) {
