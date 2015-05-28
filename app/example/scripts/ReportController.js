@@ -84,6 +84,7 @@ angular
             success: function(results) {
               $scope.Category=JSON.parse(results[0].get("questionnaire"));
               $scope.Category.objectId = results[0].id;
+              $scope.Category.createdBy = results[0].get("createdBy");
               $scope.Category.clinic = (($scope.Category.pregnant == "Yes") || ($scope.Category.blood == "Yes") ||
                 ($scope.Category.fever == "Yes") || ($scope.Category.vaginal == "Yes") || ($scope.Category.flank == "Yes"));
               $scope.$apply();

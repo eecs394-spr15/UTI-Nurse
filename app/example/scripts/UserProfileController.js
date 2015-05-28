@@ -13,9 +13,18 @@ supersonic.ui.dialog.alert("Suggested");
     }
 
     supersonic.ui.views.current.params.onValue( function (values) {
-      //alert(values.id);
-      $scope.userProfile = JSON.parse(values.id);
-      $scope.Profile = $scope.userProfile;
-      $scope.$apply();
+      var query = new Parse.Query(Parse.User);
+      alert(JSON.parse(values.id));
+
+        query.get(JSON.parse(values.id).objectId, {
+          success: function(user) {
+             $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
+             $scope.apply();
+          },
+          error: function(object, error) {
+            supersonic.ui.dialog.alert("Error: " + error.message);// The object was not retrieved successfully.
+            // error is a Parse.Error with an error code and message.
+          }
+        });
     });
   });
