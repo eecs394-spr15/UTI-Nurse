@@ -14,7 +14,7 @@ supersonic.ui.dialog.alert("Suggested");
 
     supersonic.ui.views.current.params.onValue( function (values) {
       var query = new Parse.Query(Parse.User);
-      alert(JSON.parse(values.id));
+      //alert(JSON.parse(values.id));
 
         query.get(JSON.parse(values.id).objectId, {
           success: function(user) {
