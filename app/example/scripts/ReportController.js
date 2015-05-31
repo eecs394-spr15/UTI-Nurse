@@ -87,6 +87,7 @@ angular
               $scope.Category.createdBy = results[0].get("createdBy");
               $scope.Category.clinic = (($scope.Category.pregnant == "Yes") || ($scope.Category.blood == "Yes") ||
                 ($scope.Category.fever == "Yes") || ($scope.Category.vaginal == "Yes") || ($scope.Category.flank == "Yes"));
+              $scope.Category.sulfa = $scope.Profile.sulfa;
             },
             error: function(error) {
               //alert("Error: " + error.code + " " + error.message);
