@@ -20,6 +20,30 @@ angular
     $scope.profileFunction = function(patient){
       return patient.get("profile");
     };
+
+    $scope.sendMail =function(){
+      alert("1");
+      $.ajax({
+        type: "POST",
+        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        data: {
+          'key': 'kccN6db5ZPOpNJ2XzWz9Eg',
+          'message': {
+            'from_email': 'jiweixia2016@u.northwestern.edu',
+            'to': [
+              {
+                'email': 'xiajiwei@yahoo.com',
+                'name': 'alfred',
+                'type': 'to'
+              }
+            ],
+            'subject': 'You got an email',
+            'html': 'html can be used'
+          }
+        }
+      });
+      alert("2");
+    };
     
      $scope.checkUserSubmitted= function(){
           // var query = new Parse.Query(Parse.User);
