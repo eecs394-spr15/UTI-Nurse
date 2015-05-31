@@ -43,12 +43,46 @@ angular
       //           });
       //         }
       //       });
+alert("Approved!");
       var Point = Parse.Object.extend("Case");
         var point = new Point();
         point.id = id;
 
         // Set a new value on quantity
         point.set("status", "Approved");
+
+        // Save
+        point.save(null, {
+          success: function(point) {
+            // Saved successfully.
+          },
+          error: function(point, error) {
+            // The save failed.
+            // error is a Parse.Error with an error code and description.
+          }
+        });
+    };
+
+    $scope.suggest = function(id){
+      // var query = new Parse.Query("Case");
+      //     query.equalTo("createdBy", id);
+      // query.first({
+      //     success: function (Case) {
+      //         Case.save(null, {
+      //             success: function (case) {
+      //               case.set("status", "Approved");
+      //               case.save();
+      //             }
+      //           });
+      //         }
+      //       });
+alert("Suggestion Sent!");
+      var Point = Parse.Object.extend("Case");
+        var point = new Point();
+        point.id = id;
+
+        // Set a new value on quantity
+        point.set("status", "Denied");
 
         // Save
         point.save(null, {
@@ -87,13 +121,13 @@ angular
               $scope.Category.createdBy = results[0].get("createdBy");
               $scope.Category.clinic = (($scope.Category.pregnant == "Yes") || ($scope.Category.blood == "Yes") ||
                 ($scope.Category.fever == "Yes") || ($scope.Category.vaginal == "Yes") || ($scope.Category.flank == "Yes"));
-              $scope.Category.sulfa = $scope.Profile.sulfa;
+              
             },
             error: function(error) {
               //alert("Error: " + error.code + " " + error.message);
             }
           }).then(function(results){
-            alert($scope.Category.createdBy.id);
+            // alert($scope.Category.createdBy.id);
             var userQuery = new Parse.Query(Parse.User);
 
             userQuery.get($scope.Category.createdBy.id, {

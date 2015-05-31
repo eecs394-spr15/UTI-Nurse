@@ -102,21 +102,16 @@
 
 
 <div ng-show="Category.clinic">
-  <button ng-click="" class="button button-block button-negative">Suggest Clinic Visit</button>
+  <button ng-click="suggest(Category.objectId)" class="button button-block button-negative">Suggest Clinic Visit</button>
   </div>
 
 <div ng-hide="Category.clinic"
  <super-navigate location="example#getting-started">
     <button ng-click="approve(Category.objectId)" class="button button-block button-balanced">
-      <div ng-show="Category.sulfa">
-  Approve Nitrofurantoin twice daily for 5 days
-</div>
-<div ng-hide="Category.sulfa">
-  Approve Trimethoprim-Sulfamethoxazole twice daily for 3 days
-</div>
+     Approve
 
     </button>
-    <button ng-click="" class="button button-block button-negative">Suggest Clinic Visit</button>
+    <button ng-click="suggest(Category.objectId)" class="button button-block button-negative">Suggest Clinic Visit</button>
 </super-navigate>
 </div>
 </div>
