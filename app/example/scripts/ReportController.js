@@ -129,6 +129,24 @@ alert("Suggestion Sent!");
               success: function(user) {
                  $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
                  //alert(user.get("profile"));
+                 if ($scope.Profile.sulfa === undefined){
+                  $scope.Profile.sulfa = false;
+                 }
+                 if ($scope.Profile.nitrofurantoin=== undefined){
+                  $scope.Profile.nitrofurantoin = false;
+                 }
+                 $scope.Category.sulfa = $scope.Profile.sulfa;
+                $scope.Category.nitrofurantoin = $scope.Profile.nitrofurantoin;
+                results[0].set("antibiotic", $scope.Category.sulfa)
+                alert(results[0].get("antibiotic"));
+                results[0].save(null, {
+                  success: function(res){
+                    alert(res);
+                  },
+                  error: function(res, error){
+                    alert(error);
+                  }
+                });
                  $scope.$apply();
               },
               error: function(object, error) {
