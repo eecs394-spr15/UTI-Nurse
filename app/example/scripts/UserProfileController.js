@@ -18,8 +18,8 @@ angular
         query.get(JSON.parse(values.id).objectId, {
           success: function(user) {
              $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
-             $scope.dataURL = user.get("photo").url();
-             $scope.apply();
+             //alert(user.get("profile"));
+             $scope.$apply();
           },
           error: function(object, error) {
             supersonic.ui.dialog.alert("Error: " + error.message);// The object was not retrieved successfully.

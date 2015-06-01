@@ -2,11 +2,6 @@ angular
   .module('example')
   .controller('ReportController', function($scope, supersonic) {
 
-    Parse.User.current().fetch();
-    $scope.currentUser = Parse.User.current();
-
-
-
 
     $scope.$apply();
 
@@ -43,7 +38,7 @@ angular
       //           });
       //         }
       //       });
-alert("Approved!");
+alert("Patient Notified!");
       var Point = Parse.Object.extend("Case");
         var point = new Point();
         point.id = id;
@@ -133,7 +128,8 @@ alert("Suggestion Sent!");
             userQuery.get($scope.Category.createdBy.id, {
               success: function(user) {
                  $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
-                 $scope.apply();
+                 //alert(user.get("profile"));
+                 $scope.$apply();
               },
               error: function(object, error) {
                 supersonic.ui.dialog.alert("Error: " + error.message);// The object was not retrieved successfully.
