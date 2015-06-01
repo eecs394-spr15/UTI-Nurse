@@ -25,19 +25,19 @@
 		    		{{ case.now }}
 		    		<div ng-if="case.status == 'Approved'">
 		    		<br>
-				    	<button class="button button-balanced status">
+				    	<button class="button button-balanced icon-left super-checkmark-circled status">
 				    	{{ case.status }}
 				    	</button>
 				    </div>
 				    <div ng-if="case.status == 'Pending'">
 				    <br>
-				    	<button class="button button-calm status">
+				    	<button class="button button-calm icon-left super-alert-circled status">
 				    	{{ case.status }}
 				    	</button>
 				    </div>
 				    <div ng-if="case.status == 'Denied'">
 				    <br>
-				    	<button class="button button-assertive status">
+				    	<button class="button button-assertive icon-left super-close-circled status">
 				    	{{ case.status }}
 				    	</button>
 				    </div>
