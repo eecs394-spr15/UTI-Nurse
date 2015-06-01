@@ -38,7 +38,7 @@ angular
       //           });
       //         }
       //       });
-alert("Approved!");
+alert("Patient Notified!");
       var Point = Parse.Object.extend("Case");
         var point = new Point();
         point.id = id;
