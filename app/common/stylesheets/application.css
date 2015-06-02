@@ -14,3 +14,9 @@
     left: 0;
     width:100%;
 }
+.img-profile{
+	width: 100%;
+	border-style: solid;
+    border-width: medium;
+    border-color: grey;
+}

@@ -25,6 +25,50 @@ angular
           $scope.refresh();
     };
 
+$scope.sendMailApprove =function(){
+      $.ajax({
+        type: "POST",
+        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        data: {
+          'key': 'kccN6db5ZPOpNJ2XzWz9Eg',
+          'message': {
+            'from_email': 'nurse@gmail.com',
+            'to': [
+              {
+                'email': $scope.email,
+                'name': $scope.Profile.firstName,
+                'type': 'to'
+              }
+            ],
+            'subject': 'Your case is approved',
+            'html': 'Your case is approved!'
+          }
+        }
+      });
+    };
+
+    $scope.sendMailDeny =function(){
+      $.ajax({
+        type: "POST",
+        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        data: {
+          'key': 'kccN6db5ZPOpNJ2XzWz9Eg',
+          'message': {
+            'from_email': 'nurse@gmail.com',
+            'to': [
+              {
+                'email': $scope.email,
+                'name': $scope.Profile.firstName,
+                'type': 'to'
+              }
+            ],
+            'subject': 'Your case is Denied',
+            'html': 'Your case is Denied!'
+          }
+        }
+      });
+    };
+
     $scope.approve = function(id){
       // var query = new Parse.Query("Case");
       //     query.equalTo("createdBy", id);
@@ -38,6 +82,7 @@ angular
       //           });
       //         }
       //       });
+$scope.sendMailApprove();
 alert("Patient Notified!");
       var Point = Parse.Object.extend("Case");
         var point = new Point();
@@ -71,6 +116,7 @@ alert("Patient Notified!");
       //           });
       //         }
       //       });
+$scope.sendMailDeny();
 alert("Suggestion Sent!");
       var Point = Parse.Object.extend("Case");
         var point = new Point();
@@ -127,6 +173,7 @@ alert("Suggestion Sent!");
 
             userQuery.get($scope.Category.createdBy.id, {
               success: function(user) {
+                $scope.email = user.get("email");
                  $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
                  //alert(user.get("profile"));
                  if ($scope.Profile.sulfa === undefined){

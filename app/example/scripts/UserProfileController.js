@@ -17,6 +17,7 @@ angular
 
         query.get(JSON.parse(values.id).objectId, {
           success: function(user) {
+             $scope.URL = user.get("photo").url();
              $scope.Profile = JSON.parse(user.get("profile"));// The object was retrieved successfully.
              //alert(user.get("profile"));
              $scope.$apply();
