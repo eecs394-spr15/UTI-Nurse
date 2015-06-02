@@ -69,7 +69,7 @@ $scope.sendMailApprove =function(){
       });
     };
 
-    $scope.approve = function(id){
+    $scope.approve = function(id, antibiotic){
       // var query = new Parse.Query("Case");
       //     query.equalTo("createdBy", id);
       // query.first({
@@ -90,6 +90,7 @@ alert("Patient Notified!");
 
         // Set a new value on quantity
         point.set("status", "Approved");
+        point.set("antibiotic", antibiotic);
 
         // Save
         point.save(null, {
@@ -184,16 +185,6 @@ alert("Suggestion Sent!");
                  }
                  $scope.Category.sulfa = $scope.Profile.sulfa;
                 $scope.Category.nitrofurantoin = $scope.Profile.nitrofurantoin;
-                results[0].set("antibiotic", $scope.Category.sulfa)
-                alert(results[0].get("antibiotic"));
-                results[0].save(null, {
-                  success: function(res){
-                    alert(res);
-                  },
-                  error: function(res, error){
-                    alert(error);
-                  }
-                });
                  $scope.$apply();
               },
               error: function(object, error) {
