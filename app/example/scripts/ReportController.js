@@ -104,7 +104,7 @@ alert("Patient Notified!");
         });
     };
 
-    $scope.suggest = function(id){
+    $scope.suggest = function(id, antibiotic){
       // var query = new Parse.Query("Case");
       //     query.equalTo("createdBy", id);
       // query.first({
@@ -125,6 +125,7 @@ alert("Suggestion Sent!");
 
         // Set a new value on quantity
         point.set("status", "Denied");
+        point.set("antibiotic", antibiotic);
 
         // Save
         point.save(null, {

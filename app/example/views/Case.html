@@ -101,16 +101,16 @@
 </div>
 
 <div ng-show="Category.clinic">
-  <button ng-click="suggest(Category.objectId)" class="button button-block button-negative">Suggest Clinic Visit</button>
+  <button ng-click="suggest(Category.objectId, Category.antibiotic)" class="button button-block button-negative">Suggest Clinic Visit</button>
   </div>
 
 <div ng-hide="Category.clinic"
  <super-navigate location="example#getting-started">
-    <button ng-click="approve(Category.objectId)" class="button button-block button-balanced">
+    <button ng-click="approve(Category.objectId, Category.antibiotic)" class="button button-block button-balanced">
      Approve
 
     </button>
-    <button ng-click="suggest(Category.objectId)" class="button button-block button-negative">Suggest Clinic Visit</button>
+    <button ng-click="suggest(Category.objectId, Category.antibiotic)" class="button button-block button-negative">Suggest Clinic Visit</button>
 </super-navigate>
 </div>
 </div>
