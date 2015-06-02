@@ -21,9 +21,9 @@
 				      <i class="super-close">
 				    </button>
 			    </super-navigate> -->
-			    <super-navigate class="item" ng-repeat="case in cases | orderBy: 'now'" location = "example#Case" data-params-id="{{ case.objectId }}">
+			    <super-navigate class="item" ng-repeat="case in cases | orderBy: '-now'" location = "example#Case" data-params-id="{{ case.objectId }}">
 		    		{{ case.now }}
-		    		{{case.name}}
+		    		<span class="case-span">{{case.name}}</span>
 		    		<div ng-if="case.status == 'Approved'">
 		    		<br>
 				    	<button class="button button-balanced icon-left super-checkmark-circled status">

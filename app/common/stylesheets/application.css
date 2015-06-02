@@ -20,3 +20,8 @@
     border-width: medium;
     border-color: grey;
 }
+.case-span{
+	display: block;
+  	float: right;
+  	font-weight: bold;
+}
