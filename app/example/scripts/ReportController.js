@@ -185,6 +185,22 @@ alert("Suggestion Sent!");
                  }
                  $scope.Category.sulfa = $scope.Profile.sulfa;
                 $scope.Category.nitrofurantoin = $scope.Profile.nitrofurantoin;
+
+                if (($scope.Category.sulfa === true) && ($scope.Category.nitrofurantoin === true)){
+                  $scope.Category.antibiotic = "Ciprofloxacin 500mg twice daily for 3 days";
+                }
+
+                if (($scope.Category.sulfa === true) && ($scope.Category.nitrofurantoin === false)){
+                  $scope.Category.antibiotic = "Nitrofurantoin twice daily for 5 days";
+                }
+
+                if ($scope.Category.sulfa === false){
+                  $scope.Category.antibiotic = "Trimethoprim-Sulfamethoxazole twice daily for 3 days";
+                }
+
+                
+
+
                  $scope.$apply();
               },
               error: function(object, error) {
