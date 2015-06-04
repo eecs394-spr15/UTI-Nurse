@@ -18,7 +18,7 @@ The key components of the nurse front end include reviewing/approving cases and 
 
 2. The next step is to make a folder on your local machine by cloning.
 >```bash
-$git clone https://github.com/eecs394-spr15/UTI.git
+$git clone https://github.com/eecs394-spr15/UTI-Nurse.git
 >```
 3. This application requires a back-end server to store user data. 
 >You can create a [Parse account](https://www.parse.com/signup) for this back-end purpose.
