@@ -3,7 +3,8 @@
 ## DESCRIPTION
 AmandaCare is a mobile application that helps those who are suspicious of having a UTI to conveniently submit their symptoms for a quick diagnosis. AmandaCare requires two front ends (patient and nurse) and the UTI-Nurse repository provides the code for the nurse side of the application. 
 The key components of the nurse front end include reviewing/approving cases and viewing patients' personal/medical information.
-
+## STORYBOARD
+![Image of Yaktocat](http://i.imgur.com/qhkuQzg.png?1)
 ## SYSTEM REQUIREMENTS
 * iOS 8.0.0+
 * [AngularJS 1.3+](https://github.com/angular/angular.js)
