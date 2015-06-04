@@ -44,10 +44,21 @@ You also need to create an ad hoc build.
 
 ## ISSUES & LIMITATIONS
 * This application only works on iOS8
+* Nurse has no way of closing a finished UTI submission, which would result in a way-too-big list after some amount of actual use
+
+## CURRENT FEATURES
+* Mock login page
+* See list of UTI submissions with their status - denied if a hospital visit is reccomended, approved if an antibioitic has been presecribed, and pending if the nurse has yet to take action
+* On a given UTI submission, the nurse can view the patient's profile as well as current UTI symptoms
+* The app automatically reccomends the proper antibiotics to the nurse based on the patient's allergies
+* The nurse can approve or deny a submission; this information is then tranferred to the respective patient through the Parse database
+
+
 
 ## FEATURES TO BE ADDED
 * Credit card needs actual security measures
+* Nurse can clear list of UTI submissions
+* Sort list of cases 
 * Connection with pharmacy, actual integration
 * Nurse individual login
-* Enter zip code for nearby pharmacy
 * Patient survey before receiving result
